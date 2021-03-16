@@ -1,0 +1,19 @@
+{
+  "name": "asuresh-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "oregonTrail.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MaristGormanly/asuresh-project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MaristGormanly/asuresh-project/issues"
+  },
+  "homepage": "https://github.com/MaristGormanly/asuresh-project#readme"
+}
