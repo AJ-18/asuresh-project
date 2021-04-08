@@ -1,0 +1,84 @@
+html {
+  background: url(/images/plains2.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#indexHeader h1 {
+  position: relative;
+  left: 0px;
+  opacity: 100;
+  margin-top: 25px;
+  font-size: 70px;
+  text-align: center;
+  color: black;
+  font-family: fantasy;
+}
+
+body {
+  margin: 0;
+  border: 0;
+  font-family: fantasy;
+  font-weight: bold;
+  color: black;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0%;
+  }
+  45% {
+    opacity: 100%;
+  }
+  100% {
+    opacity: 0%;
+  }
+}
+
+@keyframes fadeOut {
+  100% {
+    opacity: 0%;
+  }
+  45% {
+    opacity: 100%;
+  }
+  0% {
+    opacity: 0%;
+  }
+}
+
+/*Code found at https://www.florin-pop.com/blog/2019/03/css-pulse-effect/ mostly helped with the looping, no actual pulsing effect */
+/* The infinite keyword in #pressSpacebar p is what I believe is the causing of the looping effect*/
+@keyframes pulse-black {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+  }
+  
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+  }
+  
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  }
+}
+
+#pressSpacebar p {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  font-size: 25px;
+  animation: pulse-black 2s infinite;
+  animation-name: fadeIn;
+  animation-duration: 4s;
+  animation-name: fadeOut;
+  animation-duration: 3s;
+}
+
+/*pulsate(CSS)*/

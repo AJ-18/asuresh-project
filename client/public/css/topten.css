@@ -1,0 +1,56 @@
+body {
+  margin: 0;
+  border: 0;
+  font-family: fantasy;
+  color: white;
+  font-size: 30px;
+  background-color: black;
+  text-align: center;
+}
+
+#TopTenHeader h1 {
+  position: relative;
+  left: 0px;
+  opacity: 100;
+  margin-top: 25px;
+  font-size: 50px;
+  text-align: center;
+  color: rgb(20, 170, 163);
+  font-family: fantasy;
+}
+
+#TopTenHeaderName p {
+  position: relative;
+  left: -240px;
+  top: 50px;
+  font-size: 30px;
+  text-align: center;
+  color: rgb(138, 170, 20);
+}
+
+#TopTenHeaderScore p {
+  position: relative;
+  left: -10px;
+  top: -15px;
+  font-size: 30px;
+  text-align: center;
+  color: rgb(138, 170, 20);
+}
+
+#TopTenHeaderDate p {
+  position: relative;
+  left: 240px;
+  top: -81px;
+  font-size: 30px;
+  text-align: center;
+  color: rgb(138, 170, 20);
+}
+
+#scores {
+  width: 48%;
+  position: relative;
+  left: 470px;
+  top: -50px;
+  color: rgb(255, 255, 255);
+}
+
