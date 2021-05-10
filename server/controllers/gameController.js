@@ -71,6 +71,7 @@ function nextDay(){
 
     // Change the status from true to false for one of the five trues in the 
     // playerStatus array in the newGame object
+    newGame.messages = "Welcome to the trail!"
     if (newGame.groupHealth < 50 && newGame.groupHealth >= 20 ){
         if (Math.random() * 100 <= 3){
             var charDeath = newGame.playerStatus[Math.floor(Math.random() 
@@ -207,12 +208,12 @@ function nextDay(){
         }
     }
     //If Spacebar is pressed in the nextDay API, changepace will come up
-   window.addEventListener("keypress", function(event){
+   /*window.addEventListener("keypress", function(event){
         if(event.keyCode == 32) {
           return changePace(request,response);
         }
       });
-      
+      */
       newGame.currentWeather = occurenceProbWeather();
       newGame.currentTerrain = newDayTerrain();
       
@@ -220,19 +221,22 @@ function nextDay(){
 
 exports.updateGame = function(req, res) {
 
-    window.addEventListener("keypress", function(event){
+    /*window.addEventListener("keypress", function(event){
         if(event.keyCode == 13) {
           newGame.daysonTrail = newGame.daysonTrail + 1
           return nextDay;
         }
       });
+    */
 
-
+    nextDay();
+    //  newGame.daysonTrail ++;
+    newGame.daysonTrail++;
     // return json of the game data
     res.setHeader('Content-Type', 'application/json');
     res.setHeader('Access-Control-Allow-Origin', "*");
     //Get back the array which has the new game data
-    res.send(currentGameData);
+    res.send(newGame);
 
 }
 

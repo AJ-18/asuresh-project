@@ -4,15 +4,26 @@ var gameController = require('../controllers/gameController');
 
 gameScreens = []
 
-/*For some reason it won't let me separate this string into multiple lines for
-easier reading.*/
 var Screen1 = 
-"<p> There are different options to choose from! </p>  <li id= 'bankerItem' > Be a banker from Boston </li><li id= 'carpenterItem'> Be a carpenter from Ohio </li><li id= 'farmerItem'> Be a farmer from Illinois </li><li id= 'differencesItem'> Find out the differences between the choices</li></ol><div id= 'selectOption'> What's your choice?</div>";
+"<p> There are different options to choose from! </p> " 
++"<li id= 'bankerItem' > Be a banker from Boston </li>" 
++"<li id= 'carpenterItem'> Be a carpenter from Ohio </li>"
++"<li id= 'farmerItem'> Be a farmer from Illinois </li>"
++"<li id= 'differencesItem'> Find out the differences between the choices</li>"
++"</ol><div id= 'selectOption'> What's your choice?</div>";
 
+var Screen2 = "Default TEXT"
+var Screen3 = "Default TEXT2"
+var Screen4 = "Default TEXT3"
+var Screen5 = "Default TEXT4"
 
 gameScreens.push(Screen1);
+gameScreens.push(Screen2);
+gameScreens.push(Screen3);
+gameScreens.push(Screen4);
+gameScreens.push(Screen5);
 
-//Getting the Game Screen
+//Getting the Game Screen with screen number
 exports.getGameScreen = function(req, res) {
     res.setHeader('Content-Type', 'application/json');
     res.setHeader('Access-Control-Allow-Origin', "*");
