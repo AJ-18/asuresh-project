@@ -4,7 +4,7 @@ var gameData = require('../models/gameData');
 currentGameData = [];
 
 var newGame = gameData.Game(["", "", "", "", ""],
- [true, true, true, true, true], [""], 0, [""], 0, 100, [""],
+ [1, 1, 1, 1, 1], [""], 0, [""], 0, 100, [""],
   0, [""], [""], [""]);
 
 
@@ -69,8 +69,8 @@ var Weather = require('../models/weather');
 // **I think you just create a regular nextday function and call it in updateGame
 function nextDay(){
 
-    // Change the status from true to false for one of the five trues in the 
-    // playerStatus array in the newGame object
+    /* Change the status from true to false for one of the five trues in the 
+       playerStatus array in the newGame object */
     newGame.messages = "Welcome to the trail!"
     if (newGame.groupHealth < 50 && newGame.groupHealth >= 20 ){
         if (Math.random() * 100 <= 3){
@@ -78,7 +78,7 @@ function nextDay(){
                 * newGame.playerStatus.length)];
             //var changedStatus = newGame.playerStatus.indexOf(false);
            // newGame.playerStatus[changedStatus] = true;
-           newGame.playerStatus[charDeath] = false;
+           newGame.playerStatus[charDeath] = 0;
            newGame.messages = "A party member has died!"
         }
     }
@@ -88,17 +88,13 @@ function nextDay(){
                 * newGame.playerStatus.length)];
             //var changedStatus = newGame.playerStatus.indexOf(false);
             // newGame.playerStatus[changedStatus] = true;
-            newGame.playerStatus[charDeath] = false;
+            newGame.playerStatus[charDeath] = 0;
             newGame.messages = "A party member has died!"
         }
     }
     
-    if (newGame.playerStatus == [false, false, false, false, false]) {
+    if (newGame.playerStatus == [0, 0, 0, 0, 0]) {
         newGame.groupHealth = 0;
-    }
-
-    if (newGame.groupHealth == 0 );{
-        newGame.messages = "Game over"
     }
 
     if (newGame.milesTraveled == 500) {
@@ -108,6 +104,16 @@ function nextDay(){
     if (newGame.daysonTrail == 45) {
         newGame.messages = "Time has run out!"
     }
+
+    if (newGame.groupHealth <= 0 ){
+        newGame.playerStatus = [0, 0, 0, 0, 0]
+        newGame.messages = "Game over";
+        
+    } /*else {
+        newGame.messages = "Test";
+    }*/
+    
+
 
     function occurenceProbWeather() {
         /*Made it so there is a 10% chance of 1, 2, 3, 4, 5 to appear,

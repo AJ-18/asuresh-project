@@ -8,6 +8,7 @@ var player2 = topTen.createTopUser("Steven", 1250, "5/1/15");
 var player3 = topTen.createTopUser("David", 1000, "6/3/16");
 var player4 = topTen.createTopUser("Whitney", 1230, "2/5/17");
 
+topTenArray.sort((a,b)=> a.Score - b.Score);
 
 topTenArray.push(player1);
 topTenArray.push(player2);
