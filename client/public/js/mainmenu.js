@@ -27,3 +27,16 @@ window.addEventListener("keypress", function(event){
     }
   });
 */
+let infoOnTrail = document.getElementById("infoOnTrail");
+
+window.addEventListener("load", () => {
+  window.addEventListener("keypress", function(event){
+    if(event.keyCode == 50) {
+      fetch("/api/setup/screen/6").then((response) => {
+        response.text().then(function(data){
+          infoOnTrail.innerHTML = data;
+        });
+      });
+    };
+  });
+});

@@ -65,6 +65,9 @@ app.route('/api/changePace/:paceId')
 //All routes for setup Controller
 var setupController = require('../server/controllers/setupController')  
 
+app.route('/api/setup/playerMoney')
+.post(setupController.saveStartMoney);
+
 app.route('/api/setup/startMonth')
 .get(setupController.getStartMonth)
 .post(setupController.saveStartMonth);
@@ -81,7 +84,8 @@ app.route('/api/setup/player')
 .post(setupController.savePlayerName);
 
 app.route('/api/setup/player/:playerName')
-.get(setupController.getPlayerName)
+.get(setupController.getPlayerName);
+
 
 /* (Not Implemented) **Possible implementations but I do not see the purpose right now
 

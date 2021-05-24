@@ -36,3 +36,29 @@ body {
   background-color: black;
   text-align: center;
 }
+
+#infoOnTrail {
+  position: relative;
+  left: 0px;
+  font-size: 26px;
+  text-align: center;
+}
+
+#infoOption {
+  color: purple;
+  text-decoration: underline;
+}
+
+#trailInfoHeader {
+  color: orange;
+}
+
+#trailInfo {
+  color: orangered;
+}
+
+#spacebarInfo {
+  position: inherit;
+  top: 200px;
+  color: white;
+}

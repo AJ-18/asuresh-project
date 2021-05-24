@@ -4,8 +4,8 @@ var gameData = require('../models/gameData');
 currentGameData = [];
 
 var newGame = gameData.Game(["", "", "", "", ""],
- [1, 1, 1, 1, 1], [""], 0, [""], 0, 100, [""],
-  0, [""], [""], [""]);
+ ["alive", "alive", "alive", "alive", "alive"], "", "0", "", 0, 100, "",
+  0, "", "", "");
 
 
 currentGameData.push(newGame);
@@ -62,7 +62,7 @@ exports.changePace = function(req, res) {
     res.send(changedPace);
 }
 
-const { newDayTerrain } = require('../models/terrain');
+var newDayTerrain = require('../models/terrain');
 var Weather = require('../models/weather');
 
 //route API (this is all in updategame)
@@ -78,7 +78,7 @@ function nextDay(){
                 * newGame.playerStatus.length)];
             //var changedStatus = newGame.playerStatus.indexOf(false);
            // newGame.playerStatus[changedStatus] = true;
-           newGame.playerStatus[charDeath] = 0;
+           newGame.playerStatus[charDeath] = "dead";
            newGame.messages = "A party member has died!"
         }
     }
@@ -88,12 +88,12 @@ function nextDay(){
                 * newGame.playerStatus.length)];
             //var changedStatus = newGame.playerStatus.indexOf(false);
             // newGame.playerStatus[changedStatus] = true;
-            newGame.playerStatus[charDeath] = 0;
+            newGame.playerStatus[charDeath] = "dead";
             newGame.messages = "A party member has died!"
         }
     }
     
-    if (newGame.playerStatus == [0, 0, 0, 0, 0]) {
+    if (newGame.playerStatus == ["dead", "dead", "dead", "dead", "dead"]) {
         newGame.groupHealth = 0;
     }
 
@@ -106,7 +106,7 @@ function nextDay(){
     }
 
     if (newGame.groupHealth <= 0 ){
-        newGame.playerStatus = [0, 0, 0, 0, 0]
+        newGame.playerStatus = ["dead", "dead", "dead", "dead", "dead"]
         newGame.messages = "Game over";
         
     } /*else {
@@ -220,8 +220,48 @@ function nextDay(){
         }
       });
       */
+
+        function Terrains() {
+        const terrainProb = [1, 2, 3, 4];
+        const randomTerrain = terrainProb[Math.floor(Math.random() * terrainProb.length)];
+    
+        if (randomTerrain == 1) {
+            newGame.milesTraveled = newGame.milesTraveled +
+            newDayTerrain.terrainArray[0].mileChange;
+            newGame.groupHealth = newGame.groupHealth + 
+            newDayTerrain.terrainArray[0].healthChange;
+            return newDayTerrain.terrainArray[0];
+    
+        }
+    
+        if (randomTerrain == 2) {
+            newGame.milesTraveled = newGame.milesTraveled +
+            newDayTerrain.terrainArray[1].mileChange;
+            newGame.groupHealth = newGame.groupHealth + 
+            newDayTerrain.terrainArray[1].healthChange;
+            return newDayTerrain.terrainArray[1];
+        }
+    
+        if (randomTerrain == 3) {
+            newGame.milesTraveled = newGame.milesTraveled +
+            newDayTerrain.terrainArray[2].mileChange;
+            newGame.groupHealth = newGame.groupHealth + 
+            newDayTerrain.terrainArray[2].healthChange;
+            return newDayTerrain.terrainArray[2];
+        }
+    
+        if (randomTerrain == 4) {
+            newGame.milesTraveled = newGame.milesTraveled +
+            newDayTerrain.terrainArray[3].mileChange;
+            newGame.groupHealth = newGame.groupHealth + 
+            newDayTerrain.terrainArray[3].healthChange;
+            return newDayTerrain.terrainArray[3];
+        }
+    }
+
+
       newGame.currentWeather = occurenceProbWeather();
-      newGame.currentTerrain = newDayTerrain();
+      newGame.currentTerrain = Terrains();
       
  }
 

@@ -1,3 +1,4 @@
+
 body {
   margin: 0;
   border: 0;
@@ -28,10 +29,66 @@ body {
   
 }
 
-#spacebarDirections p {
+#keyboardDirections p {
   position: relative;
   top: 0px;
   left: 0px;
   font-size: 25px;
 
+}
+
+#setPace {
+  color:yellow;
+}
+
+#steadybutton {
+  position: relative;
+  background-color: #ffffff; 
+  border: none;
+  color: black;
+  padding: 15px 32px;
+  top: 0px;
+  left: 0px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+#strenuousbutton {
+  position: relative;
+  background-color: #ffffff; 
+  border: none;
+  color: black;
+  padding: 15px 32px;
+  top: 0px;
+  left: 32px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+#gruelingbutton {
+  position: relative;
+  background-color: #ffffff; 
+  border: none;
+  color: black;
+  padding: 15px 32px;
+  top: 0px;
+  left: 64px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+#restingbutton {
+  position: relative;
+  background-color: #ffffff; 
+  border: none;
+  color: black;
+  padding: 15px 32px;
+  top: 0px;
+  left: 96px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
 }

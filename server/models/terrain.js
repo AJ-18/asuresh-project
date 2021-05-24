@@ -1,47 +1,31 @@
 
 var Desert = {
     imageUrl: '/images/Desert.jpg',
-    randomString: "This is Desert"
+    healthChange: -3,
+    mileChange: .4,
+    randomString: "Desert"
 }
 
 var Plains = {
-    imageUrl: '/images/Plains.jpg',
-    randomString: "This is Plains"
+    imageUrl: '/images/plains2.jpg',
+    healthChange: +4,
+    mileChange: +1,
+    randomString: "Plains"
 }
 
 var Mountains = {
     imageUrl: '/images/Mountains.jpg',
-    randomString: "This is Mountains"
+    healthChange: -3,
+    mileChange: .4,
+    randomString: "Mountains"
 }
 
 var Woodlands = {
     imageUrl: '/images/Woodlands.jpg',
-    randomString: "This is Woodlands"
+    healthChange: +1,
+    mileChange: .8,
+    randomString: "Woodlands"
 }
 
-exports.terrainArray = Array[Desert, Plains, Mountains, Woodlands];
+exports.terrainArray = [Desert, Plains, Mountains, Woodlands];
 
- exports.newDayTerrain = function(){
-    const terrainProb = [1, 2, 3, 4];
-    const randomTerrain = terrainProb[Math.floor(Math.random() * terrainProb.length)];
-
-    if (randomTerrain == 1) {
-        return Desert
-        //return "Desert"
-    }
-
-    if (randomTerrain == 2) {
-        return Plains
-        //return "Plains"
-    }
-
-    if (randomTerrain == 3) {
-        return Mountains
-        //return "Mountains"
-    }
-
-    if (randomTerrain == 4) {
-        return Woodlands
-        //return "Woodlands"
-    }
-}

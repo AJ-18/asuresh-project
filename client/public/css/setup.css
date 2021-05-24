@@ -1,13 +1,18 @@
+
 body {
   margin: 0;
   border: 0;
   font-family: fantasy;
-  color: white;
+  color: black;
   font-size: 30px;
   background-color: black;
-  text-align: center;
 }
 
+#HeaderImage img {
+  position: relative;
+  left: 550px;
+
+}
 
 #SetupHeader h1 {
   position: relative;
@@ -29,3 +34,59 @@ body {
   text-align: center;
 }
 
+
+#setupScreen {
+  position: relative;
+  color: white;
+  left: 720px;
+}
+
+#marchItem {
+  position: fixed;
+  color: green;
+  cursor: pointer;
+  text-decoration: underline;
+  left: 920px;
+}
+
+#aprilItem {
+  position: fixed;
+  color: gold;
+  cursor: pointer;
+  text-decoration: underline;
+  left: 920px;
+}
+
+#mayItem {
+  position: fixed;
+  color: yellow;
+  cursor: pointer;
+  text-decoration: underline;
+  left: 920px;
+}
+
+#juneItem {
+  position: fixed;
+  color: orange;
+  cursor: pointer;
+  text-decoration: underline;
+  left: 920px;
+}
+
+#julyItem {
+  position: fixed;
+  color: orangered;
+  cursor: pointer;
+  text-decoration: underline;
+  left: 920px;
+}
+
+#selectedOption2 {
+  position: fixed;
+  left: 830px;
+}
+
+#screen4Info {
+  position: fixed;
+  left: 460px;
+}

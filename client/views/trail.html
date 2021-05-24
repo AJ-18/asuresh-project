@@ -4,8 +4,6 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="js/global.js"></script>
-    <script src="js/trail.js"></script>
     <link rel="stylesheet" href="css/global.css" />
     <link rel="stylesheet" href="css/trail.css" />
     <title>Trail</title>
@@ -17,47 +15,30 @@
     </div>
 
     <div id="placeholderImage">
-      <img src="/images/plains3.jpg" alt="" />
+      <img id="imageURL" src="/images/plains3.jpg" alt="" />
     </div>
 
     <div class="gameElements">
-
-    <div id="Daysontrial">
-      <p>Days on the Trail: 0</p>
+   Days on the Trail: <span id="rDaysOnTrail">0</span><br />
+   Miles Traveled: <span id="rMilestraveled">0</span><br />
+   Current Weather: <span id="rCurrentWeather">Warm</span><br />
+   Current Terrain: <span id="rCurrentTerrain">Plains</span><br />
+   Current Pace: <span id="rCurrentPace">Steady</span><br />
+   PartyHealth: <span id="rPartyHealth">100</span><br />
+   Party Status: <span id="rPartyStatus">Alive</span><br />
+   Info: <span id="rMessages">Ready to start your Journey?</span><br />
     </div>
-
-    <div id="Milestraveled">
-      <p>Miles Traveled: 0</p>
-    </div>
-
-    <div id="Partyhealthstatus">
-      <p>Current HP: 100</p>
-    </div>
-
-    <div id="CurrentWeather">
-      <p>Current Weather: Warm</p>
-    </div>
-
-    <div id="CurrentPace">
-      <p>Current Pace: Slow</p>
-    </div>
-
-    <div id="CurrentTerrain">
-      <p>Current Terrain: Plains</p>
-    </div>
-
-    <div id="PartyStatus">
-      <p># of Party Members: 5</p>
-    </div>
+    <div id="setPace">
 
     </div>
-
-    <div id="spacebarDirections">
+  
+    <div id="keyboardDirections">
       <p>
-        <a href="http://localhost:1337/mainmenu"
-          >Press SPACEBAR or click this link to return to the main menu</a
-        >
+       Press SPACEBAR to change the pace! Press ENTER to go to the next day!
       </p>
     </div>
+    <!-- Took out global.js because it has spacebar code that interferes with changePace
+    <script src="js/global.js"></script> -->
+    <script src="js/trail.js"></script>
   </body>
 </html>
